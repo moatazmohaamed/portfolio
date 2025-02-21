@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { isBrowser } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
@@ -40,7 +41,7 @@ export const BackgroundGradientAnimation = ({
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
   useEffect(() => {
-    if (typeof document !== undefined) {
+    if (isBrowser) {
       // Check if document exists (client-side)
       document.body.style.setProperty(
         "--gradient-background-start",
